@@ -8,11 +8,13 @@ function loadWebsiteData( state = [], action ) {
         data : action.data,
         lastUpdated : action.lastUpdated
       });
+    default :
+      return state
   }
 }
 
-const websiteReducer = combineReducers(
+const websiteReducer = combineReducers({
   loadWebsiteData
-)
+})
 
 export default websiteReducer;
