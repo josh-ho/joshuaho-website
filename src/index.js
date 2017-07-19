@@ -1,8 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import Shell from './views/Shell.js'
+import Landing from './views/Landing.js'
+
+ReactDOM.render(
+  <Router history={browserHistory}>
+    <Route path="/" component={Shell}>
+      <IndexRoute component={Landing} />
+    </Route>
+  </Router>
+  , document.getElementById('root')
+);
 registerServiceWorker();
